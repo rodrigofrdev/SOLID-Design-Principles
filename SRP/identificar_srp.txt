@@ -1,0 +1,29 @@
+// Perguntas para se fazer:
+// "Minha classe/função tem mais de um motivo para ser alterada?"
+
+// Sim: Se você percebe que mudanças em diferentes partes do sistema impactariam a mesma classe, ela provavelmente tem múltiplas responsabilidades.
+// Exemplo: Uma classe que rastreia calorias e também lida com logging pode precisar de alterações quando a lógica de rastreamento ou a forma de registrar logs mudar.
+// "Minha classe/função está manipulando diferentes tipos de dados ou processos?"
+
+// Sim: Se ela lida com cálculos, armazenamento, formatação, logs ou exibição de dados, provavelmente está assumindo responsabilidades demais.
+// "Posso dividir essa classe/função em partes menores que ainda façam sentido sozinhas?"
+
+// Sim: Se você consegue identificar blocos de lógica que podem existir como partes separadas (por exemplo, cálculo e logging), então a classe/função está fazendo mais do que deveria.
+// "Se uma mudança for necessária em uma parte da lógica, será que o código não relacionado será impactado?"
+
+// Sim: Se mudar um aspecto (exemplo: lógica de cálculo) exige alterar outro (exemplo: envio de notificações), você provavelmente está violando o SRP.
+// "Estou misturando lógica de domínio com detalhes de implementação?"
+
+// Sim: Se uma classe lida com a lógica principal do negócio (como rastrear calorias) e também com detalhes técnicos (como exibir mensagens ou salvar dados no banco), está violando o SRP.
+// "Se eu precisar reutilizar parte desse código em outro lugar, será que vou levar responsabilidades que não preciso?"
+
+// Sim: Se você não consegue reutilizar uma funcionalidade isolada sem levar junto outras responsabilidades desnecessárias, sua classe/função provavelmente está violando o SRP.
+// Dicas práticas:
+// Analise os métodos da classe: Se cada método parecer lidar com aspectos diferentes (exemplo: cálculo, comunicação, logging), é um alerta de que a classe está sobrecarregada.
+// Use nomes claros: Se o nome de uma classe ou função não deixa claro o que ela faz, ou parece abrangente demais (ex.: UserManager que gerencia usuários, logins e permissões), talvez esteja violando o SRP.
+// Tente escrever testes: Se você tiver dificuldade em testar uma funcionalidade isoladamente, pode ser um indicativo de que ela está acoplada a outras responsabilidades.
+// Resumo prático:
+// A pergunta-chave é:
+// "Minha classe ou função tem um único motivo para mudar?"
+
+// Se a resposta for "não", então você provavelmente está violando o SRP e deve considerar refatorar o código para dividir responsabilidades.
